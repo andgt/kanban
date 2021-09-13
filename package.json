@@ -1,0 +1,20 @@
+{
+  "name": "kanban",
+  "version": "1.0.0",
+  "description": "kanban board",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "author": "anatoly degtyar",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.5",
+    "gh-pages": "^3.2.3",
+    "gulp-plumber": "^1.2.1"
+  }
+}
