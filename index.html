@@ -38,41 +38,44 @@
         <article class="taskboard__group taskboard__group--backlog">
           <h3 class="taskboard__group-heading taskboard__group-heading--backlog">Список дел</h3>
           <div class="taskboard__list">
-            <div class="taskboard__item task">
+            <div class="taskboard__item task task--empty">
+              <p>Добавьте задачу</p>
+            </div>
+            <!--<div class="taskboard__item task--visual task">
               <div class="task__body">
-                <p class="task__view">Название первой задачи</p>
+                <p class="task__view">Название первой задачи 1</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task">
+            <div class="taskboard__item task--visual task">
               <div class="task__body">
-                <p class="task__view">Название первой задачи</p>
+                <p class="task__view">Название первой задачи 2</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task">
+            <div class="taskboard__item task--visual task">
               <div class="task__body">
-                <p class="task__view">Название первой задачи</p>
+                <p class="task__view">Название первой задачи 3</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task">
+            <div class="taskboard__item task--visual task">
               <div class="task__body">
-                <p class="task__view">Название первой задачи</p>
+                <p class="task__view">Название первой задачи 4</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task">
+            <div class="taskboard__item task--visual task">
               <div class="task__body">
-                <p class="task__view">Название первой задачи</p>
+                <p class="task__view">Название первой задачи 5</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
-            </div>
+            </div>-->
           </div>
         </article>
         <article class="taskboard__group taskboard__group--processing">
@@ -81,34 +84,27 @@
             <div class="taskboard__item task task--empty">
               <p>Перетащите карточку</p>
             </div>
-            <div class="taskboard__item task task--processing">
+            <div class="taskboard__item task task--visual task--processing">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task task--processing">
+            <div class="taskboard__item task task--visual task--processing">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task task--processing">
+            <div class="taskboard__item task task--visual task--processing">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-          </div>
-          <div class="taskboard__item task task--processing">
-            <div class="task__body">
-                <p class="task__view">Название первой задачи</p>
-                <input class="task__input" type="text" value="Название первой задачи">
-              </div>
-            <button class="task__edit" type="button" aria-label="Изменить"></button>
           </div>
         </article>
         <article class="taskboard__group taskboard__group--done">
@@ -117,14 +113,14 @@
             <div class="taskboard__item task task--empty">
               <p>Перетащите карточку</p>
             </div>
-            <div class="taskboard__item task task--done">
+            <div class="taskboard__item task task--visual task--done">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task task--processing">
+            <div class="taskboard__item task task--visual task--done">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
@@ -136,22 +132,21 @@
         <article class="taskboard__group taskboard__group--basket">
           <h3 class="taskboard__group-heading taskboard__group-heading--basket">Корзина</h3>
           <div class="taskboard__list taskboard__list--trash">
-            <div class="taskboard__item task task--basket">
+            <div class="taskboard__item task task--visual task--basket">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
             </div>
-            <div class="taskboard__item task task--basket">
+            <div class="taskboard__item task task--visual task--basket">
               <div class="task__body">
                 <p class="task__view">Название первой задачи</p>
                 <input class="task__input" type="text" value="Название первой задачи">
               </div>
               <button class="task__edit" type="button" aria-label="Изменить"></button>
-
             </div>
-            <div class="task--empty task task--empty-trash">
+            <div class="taskboard__item task--empty task task--empty-trash">
               <p>Корзина пуста</p>
             </div>
           </div>
@@ -169,14 +164,14 @@
     </div>
   </main>
   <template id="task-template">
-    <div class="taskboard__item task">
+    <div class="taskboard__item task--visual task">
       <div class="task__body">
         <p class="task__view"></p>
-        <input class="task__input" type="text" value="">
+        <input class="task__input" type="text" value="Название первой задачи">
       </div>
       <button class="task__edit" type="button" aria-label="Изменить"></button>
     </div>
   </template>
-  <script src="js/script.js" type="module"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
