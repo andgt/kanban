@@ -1,6 +1,6 @@
 .task {
   position: relative;
-  width: 100%;
+  width: 260px;
   padding: 16px 14px;
   display: flex;
 
@@ -110,10 +110,6 @@
   border: 0;
   transition: 0.3s ease;
 }
-
-/*.task--visual + .task--empty {
-  display: none;
-}*/
 
 .task__body {
   flex: 1;

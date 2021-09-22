@@ -1,6 +1,5 @@
 .board-app {
   height: auto;
-
 }
 
 .board-app__inner {
@@ -13,7 +12,6 @@
 }
 
 .board-app__inner h1 {
-
   font-size: 32px;
 }
 
