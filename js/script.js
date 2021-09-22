@@ -90,16 +90,17 @@ let draggedTask = function () {
 		});
 
 		element.addEventListener("dragstart", (evt) => {
-			evt.target.classList.add("task--dragged");
+			let elStartDraggable = evt.target;
+			elStartDraggable.classList.add("task--dragged");
 			if (element.children.length <= 2) {
 				let emptyThisInvisibleStart = element.querySelector(".task--empty");
-				console.log(emptyThisInvisibleStart);
 				emptyThisInvisibleStart.classList.remove("task--invisible");
 			}
 		});
 
 		element.addEventListener("dragend", (evt) => {
-			evt.target.classList.remove("task--dragged");
+			let elEndDraggable = evt.target;
+			elEndDraggable.classList.remove("task--dragged");
 			if (element.children.length > 1) {
 				let emptyThisVisibleEnd = element.querySelector(".task--empty");
 				emptyThisVisibleEnd.classList.add("task--invisible");
@@ -109,11 +110,31 @@ let draggedTask = function () {
 		element.addEventListener("dragover", (evt) => {
 			evt.preventDefault();
 			let activeElement = taskList.querySelector(".task--dragged");
+
+			/*activeElement.style.position = "absolute";
+			activeElement.style.top = evt.pageY + "px";
+			activeElement.style.left = evt.pageX + "px";
+			activeElement.style.zIndex = 1000;*/
+
 			let currentElement = evt.target;
 			let isMoveable = activeElement != currentElement && currentElement.classList.contains("taskboard__item");
 			if (!isMoveable) {
 				return;
 			}
+
+			if (element.classList.contains("taskboard__list--sorted")) {
+				activeElement.classList.remove("task--done", "task--basket");
+				activeElement.classList.add("task--processing");
+			} else if (element.classList.contains("taskboard__list--done")) {
+				activeElement.classList.remove("task--processing", "task--basket");
+				activeElement.classList.add("task--done");
+			} else if (element.classList.contains("taskboard__list--trash")) {
+				activeElement.classList.remove("task--processing", "task--done");
+				activeElement.classList.add("task--basket");
+			} else if (element.classList.contains("taskboard__list--backlog")) {
+				activeElement.classList.remove("task--processing", "task--done", "task--basket");
+			};
+
 			let nextElement = getNextElement(evt.clientY, currentElement);
 			if (nextElement && activeElement === nextElement.previousElementSibling || activeElement === nextElement) {
 				return;
