@@ -7,6 +7,7 @@ let items = document.getElementsByClassName("taskboard__item");
 let newTaskField = document.getElementById("add-task");
 let taskTemplate = document.getElementById("task-template").content;
 let listTasks = document.querySelectorAll(".taskboard__list");
+let buttonClear = document.querySelector(".button--clear");
 
 // Добавляет новую задачу в список
 
@@ -95,6 +96,10 @@ let draggedTask = function () {
 			if (element.children.length <= 2) {
 				let emptyThisInvisibleStart = element.querySelector(".task--empty");
 				emptyThisInvisibleStart.classList.remove("task--invisible");
+			};
+
+			if (element.children.length <= 2 && element.classList.contains("taskboard__list--trash")) {
+				buttonClear.setAttribute("disabled", "disabled");
 			}
 		});
 
@@ -104,7 +109,12 @@ let draggedTask = function () {
 			if (element.children.length > 1) {
 				let emptyThisVisibleEnd = element.querySelector(".task--empty");
 				emptyThisVisibleEnd.classList.add("task--invisible");
+			};
+
+			if (element.children.length > 1 && element.classList.contains("taskboard__list--trash")) {
+				buttonClear.removeAttribute("disabled", "disabled");
 			}
+
 		});
 
 		element.addEventListener("dragover", (evt) => {
@@ -153,3 +163,23 @@ let draggedTask = function () {
 };
 
 draggedTask();
+
+let removeTasks = function () {
+	buttonClear.addEventListener("click", (evt) => {
+		let taskboardListBasket = document.querySelector(".taskboard__list--trash");
+		let taskBasket = document.querySelectorAll(".task--basket");
+		taskBasket.forEach(element => {
+			taskboardListBasket.removeChild(element);
+		});
+
+		if (taskboardListBasket.children.length <= 2) {
+			let emptyThisInvisibleStart = taskboardListBasket.querySelector(".task--empty");
+			emptyThisInvisibleStart.classList.remove("task--invisible");
+			buttonClear.setAttribute("disabled", "disabled");
+		} else {
+			return false;
+		}
+	})
+}
+
+removeTasks();
